@@ -1,12 +1,10 @@
-FROM relateiq/oraclejava7
+FROM relateiq/oracle-java7
 
 RUN apt-get update
-RUN apt-get install -y git curl build-essential make gcc wget lsof
+RUN apt-get install -y wget
 
 RUN mkdir -p /data /logs /init /opt/cassandra
 RUN wget --progress=dot:mega -O - https://s3-us-west-1.amazonaws.com/relateiq-build-resources/apache-cassandra-1.2.10-bin.tar.gz | tar -zx -C /opt/cassandra --strip-components=1
-
-VOLUME [ "/init", "/logs", "/data" ]
 
 EXPOSE 7000 7001 7199 9160 9042
 
