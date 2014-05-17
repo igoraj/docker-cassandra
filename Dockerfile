@@ -4,8 +4,7 @@ RUN apt-get update
 RUN apt-get install -y wget
 
 RUN mkdir -p /data /logs /init /opt/cassandra
-# RUN wget --no-check-certificate --progress=dot:mega -O - https://s3-us-west-1.amazonaws.com/relateiq-build-resources/apache-cassandra-1.2.10-bin.tar.gz | tar -zx -C /opt/cassandra --strip-components=1
-RUN wget --no-check-certificate --progress=dot:mega -O - http://apache.mirror.quintex.com/cassandra/2.0.7/apache-cassandra-2.0.7-bin.tar.gz | tar -zx -C /opt/cassandra --strip-components=1
+RUN wget --no-check-certificate --progress=dot:mega -O - https://s3-us-west-1.amazonaws.com/relateiq-build-resources/apache-cassandra-2.0.7-bin.tar.gz | tar -zx -C /opt/cassandra --strip-components=1
 
 EXPOSE 7000 7001 7199 9160 9042
 
